@@ -1,103 +1,85 @@
-#:kivy 2.3.0
-FloatLayout:
+MDFloatLayout:
 
-    GridLayout:
+    MDGridLayout:
         size_hint: .5, .5
         pos_hint: {'center_x': .5, 'center_y': .5}
         cols: 3
         rows: 3
 
         Button:
-            id: btnTopLeft
+            id: btnTL
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnTopLeft)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnTL)
+            background_color: "teal"
 
         Button:
-            id: btnTopMid
+            id: btnL
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnTopMid)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnL)
+            background_color: "teal"
 
         Button:
-            id: btnTopRight
+            id: btnBL
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnTopRight)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnBL)
+            background_color: "teal"
 
         Button:
-            id: btnMidLeft
+            id: btnTC
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnMidLeft)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnTC)
+            background_color: "teal"
 
         Button:
-            id: btnCenter
+            id: btnC
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnCenter)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnC)
+            background_color: "teal"
 
         Button:
-            id: btnMidRight
+            id: btnBC
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnMidRight)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnBC)
+            background_color: "teal"
 
         Button:
-            id: btnBottomLeft
+            id: btnTR
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnBottomLeft)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnTR)
+            background_color: "teal"
 
         Button:
-            id: btnBottomMid
+            id: btnCR
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnBottomMid)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnCR)
+            background_color: "teal"
 
         Button:
-            id: btnBottomRight
+            id: btnBR
             text: ""
             font_size: "40sp"
-            on_release: app.presser(btnBottomRight)
-            background_color: 0, 1, 1, 1
- 
+            on_release: app.presser(btnBR)
+            background_color: "teal"
     
-    Label:
+    MDLabel:
         id: infoLabel
         font_size: "40sp"
-        text: ""
+        text: "Testing"
         halign: "center"
         pos_hint: {"center_y": .15}
-    
-    Button:
-        id: reset
-        text: "Reset"
-        size_hint: (0.3, 0.05)  # Adjust the button size as needed
-        pos_hint: {"center_x": 0.5, "center_y": 0.05}  # Centered horizontally, positioned below the label
-        on_release: app.reset_board(reset)
 
-    Label:
+    MDLabel:
         id: title
         font_size: "80sp"
         text: "Kivy TicTacToe"
         halign: "center"
-        color: 1, 1, 1, 1  # Set text color to white
+        theme_text_color: "Custom"
         pos_hint: {"center_y": .85}
-    
