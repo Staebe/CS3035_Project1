@@ -48,10 +48,12 @@ class TicTacToe(App):
             button.background_disabled_normal = ""  
             button.color = (0, 0, 0, 1)  # Black text
         
+        self.diable_all_buttons()
+        
     def disable_all_buttons(self): # to implement to disable after winning
         pass
 
-    def reset_board(self):
-        pass  #implement later, would just need to reset all buttons to starting vals from Board.kv
+    def reset_board(self, button):
+        pass  #implement later, would just need to reset all 9 tictactoe buttons to starting vals from Board.kv
 
 TicTacToe().run()

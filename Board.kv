@@ -91,6 +91,7 @@ FloatLayout:
         text: "Reset"
         size_hint: (0.3, 0.05)  # Adjust the button size as needed
         pos_hint: {"center_x": 0.5, "center_y": 0.05}  # Centered horizontally, positioned below the label
+        on_release: app.reset_board(reset)
 
     Label:
         id: title
