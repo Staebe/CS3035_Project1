@@ -1,0 +1,85 @@
+MDFloatLayout:
+
+    MDGridLayout:
+        size_hint: .5, .5
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        cols: 3
+        rows: 3
+
+        Button:
+            id: btnTL
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnTL)
+            background_color: "teal"
+
+        Button:
+            id: btnL
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnL)
+            background_color: "teal"
+
+        Button:
+            id: btnBL
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnBL)
+            background_color: "teal"
+
+        Button:
+            id: btnTC
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnTC)
+            background_color: "teal"
+
+        Button:
+            id: btnC
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnC)
+            background_color: "teal"
+
+        Button:
+            id: btnBC
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnBC)
+            background_color: "teal"
+
+        Button:
+            id: btnTR
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnTR)
+            background_color: "teal"
+
+        Button:
+            id: btnCR
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnCR)
+            background_color: "teal"
+
+        Button:
+            id: btnBR
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnBR)
+            background_color: "teal"
+    
+    MDLabel:
+        id: infoLabel
+        font_size: "40sp"
+        text: "Testing"
+        halign: "center"
+        pos_hint: {"center_y": .15}
+
+    MDLabel:
+        id: title
+        font_size: "80sp"
+        text: "Kivy TicTacToe"
+        halign: "center"
+        theme_text_color: "Custom"
+        pos_hint: {"center_y": .85}
