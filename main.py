@@ -19,17 +19,23 @@ class TicTacToe(MDApp):
             button.disabled = True
             button.color = [1,0,1,1]
             self.check_if_winner()
-            if self.winner == False: 
-                self.root.ids.infoLabel.text = "Your turn X"
-            self.user  = "X"
+            if self.winner == False:
+                if self.check_if_all_buttons_pressed():
+                    self.root.ids.infoLabel.text = "Tie Game"
+                else:
+                    self.root.ids.infoLabel.text = "Your turn X"
+                    self.user  = "X"
         else:
             button.text = "X"
             button.disabled = True
             button.color = [0,0,1,1]
             self.check_if_winner()
             if self.winner == False:
-                self.root.ids.infoLabel.text = "Your turn O"
-            self.user  = "O"
+                if self.check_if_all_buttons_pressed():
+                    self.root.ids.infoLabel.text = "Tie Game"
+                else:
+                    self.root.ids.infoLabel.text = "Your turn O"
+                    self.user  = "O"
     def check_if_winner(self):
         #check horizontal (3)
         topLeftButton = self.root.ids.btnTL
@@ -91,6 +97,16 @@ class TicTacToe(MDApp):
         # No winner
         return False
 
+    def check_if_all_buttons_pressed(self):
+        # Get all buttons
+        buttons = [
+            self.root.ids.btnTL, self.root.ids.btnTC, self.root.ids.btnTR,
+            self.root.ids.btnL, self.root.ids.btnC, self.root.ids.btnR,
+            self.root.ids.btnBL, self.root.ids.btnBC, self.root.ids.btnBR
+        ]
+        
+        # Return True if all buttons are pressed
+        return all(button.disabled for button in buttons)
 
     def update_winning_buttons(self, button1, button2, button3):
         self.root.ids.infoLabel.text = f"PLAYER {self.user} Wins!"
