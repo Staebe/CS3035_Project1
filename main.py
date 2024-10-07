@@ -53,7 +53,7 @@ class TicTacToe(MDApp):
         pass
 
     def reset(self):
-        self.user = "O"
+        # self.user = "O" if commented out, whoever lost goes first next time
         # Reset all button states and colors
         buttons = [self.root.ids.btnTL, self.root.ids.btnL, self.root.ids.btnBL,
                 self.root.ids.btnTC, self.root.ids.btnC, self.root.ids.btnBC,
