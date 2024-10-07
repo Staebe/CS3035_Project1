@@ -128,8 +128,9 @@ class TicTacToe(MDApp):
         else:
             self.score_X += 1
 
-        self.root.ids.scoreLabel.text = f"PLAYER O: {self.score_O}          PLAYER X: {self.score_X}"
-        
+        self.root.ids.scoreOLabel.text = f"PLAYER O: {self.score_O}"         
+        self.root.ids.scoreXLabel.text = f"PLAYER X: {self.score_X}"
+
     def disable_all_buttons(self): # to implement to disable after winning
         
         buttons = [self.root.ids.btnTL, self.root.ids.btnL, self.root.ids.btnBL,
@@ -142,7 +143,8 @@ class TicTacToe(MDApp):
     def reset_scoreboard(self):
         self.score_O = 0
         self.score_X = 0
-        self.root.ids.scoreLabel.text = f"PLAYER O: {self.score_O}          PLAYER X: {self.score_X}"
+        self.root.ids.scoreOLabel.text = f"PLAYER O: {self.score_O}"
+        self.root.ids.scoreXLabel.text = f"PLAYER X: {self.score_X}"
 
 
     def reset(self):

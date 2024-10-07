@@ -86,11 +86,22 @@ MDFloatLayout:
         pos_hint: {"center_y": .85}
 
     MDLabel:
-        id: scoreLabel
+        id: scoreOLabel
         font_size: "150sp"
-        text: "PLAYER O: 0          PLAYER X: 0"  
+        text: "PLAYER O: 0"  
         halign: "center"
-        pos_hint: {"center_y": .2}  
+        theme_text_color: "Custom"
+        text_color: "purple"
+        pos_hint: {"center_x": .88, "center_y": .4}  
+
+    MDLabel:
+        id: scoreXLabel
+        font_size: "150sp"
+        text: "PLAYER X: 0"  
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: "blue"
+        pos_hint: {"center_x": .88, "center_y": .35}  
 
     MDButton:
         id: reset
@@ -102,7 +113,7 @@ MDFloatLayout:
             theme_text_color: "Custom"
             text_color: "red"
         MDButtonIcon:
-            icon:  "restart"
+            icon:  "refresh"
             style: "standard"
             theme_icon_color: "Custom"
             icon_color: "red"
