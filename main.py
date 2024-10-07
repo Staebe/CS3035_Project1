@@ -33,10 +33,62 @@ class TicTacToe(MDApp):
         topLeftButton = self.root.ids.btnTL
         topMidButton = self.root.ids.btnTC
         topRightButton = self.root.ids.btnTR
+        midLeftButton = self.root.ids.btnL
+        midMidButton = self.root.ids.btnC
+        midRightButton = self.root.ids.btnR
+        botLeftButton = self.root.ids.btnBL
+        botMidButton = self.root.ids.btnBC
+        botRightButton = self.root.ids.btnBR
+
 
         #TOP ROW (1/3)
         if  topLeftButton.text!= "" and  topLeftButton.text == topMidButton.text ==topRightButton.text:
             self.update_winning_buttons( topLeftButton, topMidButton, topRightButton)
+            self.disable_all_buttons()
+            return True
+        # MIDDLE ROW
+        if midLeftButton.text != "" and midLeftButton.text == midMidButton.text == midRightButton.text:
+            self.update_winning_buttons(midLeftButton, midMidButton, midRightButton)
+            self.disable_all_buttons()
+            return True
+        # BOTTOM ROW
+        if botLeftButton.text != "" and botLeftButton.text == botMidButton.text == botRightButton.text:
+            self.update_winning_buttons(botLeftButton, botMidButton, botRightButton)
+            self.disable_all_buttons()
+            return True
+
+        # Vertical wins (3 columns)
+        # LEFT COLUMN
+        if topLeftButton.text != "" and topLeftButton.text == midLeftButton.text == botLeftButton.text:
+            self.update_winning_buttons(topLeftButton, midLeftButton, botLeftButton)
+            self.disable_all_buttons()
+            return True
+        # MIDDLE COLUMN
+        if topMidButton.text != "" and topMidButton.text == midMidButton.text == botMidButton.text:
+            self.update_winning_buttons(topMidButton, midMidButton, botMidButton)
+            self.disable_all_buttons()
+            return True
+        # RIGHT COLUMN
+        if topRightButton.text != "" and topRightButton.text == midRightButton.text == botRightButton.text:
+            self.update_winning_buttons(topRightButton, midRightButton, botRightButton)
+            self.disable_all_buttons()
+            return True
+
+        # Diagonal wins (2 diagonals)
+        # TOP-LEFT to BOTTOM-RIGHT DIAGONAL
+        if topLeftButton.text != "" and topLeftButton.text == midMidButton.text == botRightButton.text:
+            self.update_winning_buttons(topLeftButton, midMidButton, botRightButton)
+            self.disable_all_buttons()
+            return True
+        # TOP-RIGHT to BOTTOM-LEFT DIAGONAL
+        if topRightButton.text != "" and topRightButton.text == midMidButton.text == botLeftButton.text:
+            self.update_winning_buttons(topRightButton, midMidButton, botLeftButton)
+            self.disable_all_buttons()
+            return True
+
+        # No winner
+        return False
+
 
     def update_winning_buttons(self, button1, button2, button3):
         self.root.ids.infoLabel.text = f"Player {self.user} Wins!"
@@ -50,7 +102,14 @@ class TicTacToe(MDApp):
         self.disable_all_buttons()
         
     def disable_all_buttons(self): # to implement to disable after winning
-        pass
+        
+        buttons = [self.root.ids.btnTL, self.root.ids.btnL, self.root.ids.btnBL,
+                self.root.ids.btnTC, self.root.ids.btnC, self.root.ids.btnBC,
+                self.root.ids.btnTR, self.root.ids.btnR, self.root.ids.btnBR]
+        
+        for button in buttons:
+            button.disabled = True
+
 
     def reset(self):
         # self.user = "O" if commented out, whoever lost goes first next time
