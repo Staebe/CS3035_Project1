@@ -1,0 +1,102 @@
+MDFloatLayout:
+
+    MDGridLayout:
+        size_hint: .5, .5
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        cols: 3
+        rows: 3
+
+        Button:
+            id: btnTL
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnTL)
+            background_color: "teal"
+
+        Button:
+            id: btnL
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnL)
+            background_color: "teal"
+
+        Button:
+            id: btnBL
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnBL)
+            background_color: "teal"
+
+        Button:
+            id: btnTC
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnTC)
+            background_color: "teal"
+
+        Button:
+            id: btnC
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnC)
+            background_color: "teal"
+
+        Button:
+            id: btnBC
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnBC)
+            background_color: "teal"
+
+        Button:
+            id: btnTR
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnTR)
+            background_color: "teal"
+
+        Button:
+            id: btnR
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnR)
+            background_color: "teal"
+
+        Button:
+            id: btnBR
+            text: ""
+            font_size: "40sp"
+            on_release: app.presser(btnBR)
+            background_color: "teal"
+    
+    MDLabel:
+        id: infoLabel
+        font_size: "40sp"
+        text: "Testing"
+        halign: "center"
+        pos_hint: {"center_y": .15}
+
+    MDLabel:
+        id: title
+        font_style: "Display"
+        role: "small"
+        text: "Kivy TicTacToe"
+        halign: "center"
+        pos_hint: {"center_y": .85}
+
+    MDButton:
+        id: reset
+        style: "elevated"
+        pos_hint: {"center_x": .12, "center_y": .5}
+        on_release: app.reset()
+        MDButtonText:
+            text: "Reset the board"
+            theme_text_color: "Custom"
+            text_color: "red"
+        MDButtonIcon:
+            icon:  "restart"
+            style: "standard"
+            theme_icon_color: "Custom"
+            icon_color: "red"
+        
+        
