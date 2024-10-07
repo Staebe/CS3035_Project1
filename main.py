@@ -10,6 +10,8 @@ class TicTacToe(MDApp):
     user = "O"
 
     winner = False
+    score_O = 0
+    score_X = 0
 
     def presser(self, button):
         if self.user == 'O':
@@ -91,7 +93,7 @@ class TicTacToe(MDApp):
 
 
     def update_winning_buttons(self, button1, button2, button3):
-        self.root.ids.infoLabel.text = f"Player {self.user} Wins!"
+        self.root.ids.infoLabel.text = f"PLAYER {self.user} Wins!"
         self.root.ids.infoLabel.colour = (0, 1, 0, 1)
         self.winner = True
         for button in (button1, button2, button3):
@@ -100,6 +102,17 @@ class TicTacToe(MDApp):
             button.color = (0, 0, 0, 1)  # Black text
         
         self.disable_all_buttons()
+
+        if self.winner:  # to update scoreboard
+            self.update_score()
+
+    def update_score(self):
+        if self.user == "O":
+            self.score_O += 1
+        else:
+            self.score_X += 1
+
+        self.root.ids.scoreLabel.text = f"PLAYER O: {self.score_O}          PLAYER X: {self.score_X}"
         
     def disable_all_buttons(self): # to implement to disable after winning
         
@@ -109,6 +122,11 @@ class TicTacToe(MDApp):
         
         for button in buttons:
             button.disabled = True
+
+    def reset_scoreboard(self):
+        self.score_O = 0
+        self.score_X = 0
+        self.root.ids.scoreLabel.text = f"PLAYER O: {self.score_O}          PLAYER X: {self.score_X}"
 
 
     def reset(self):
@@ -129,5 +147,7 @@ class TicTacToe(MDApp):
             button.background_disabled_normal = 'atlas://data/images/defaulttheme/button_disabled'
             self.root.ids.infoLabel.colour = (0, 0, 0, 0)
             self.root.ids.infoLabel.text = f"Your turn {self.user}"
+
+        self.winner = False
 
 TicTacToe().run()

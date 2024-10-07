@@ -85,6 +85,13 @@ MDFloatLayout:
         halign: "center"
         pos_hint: {"center_y": .85}
 
+    MDLabel:
+        id: scoreLabel
+        font_size: "150sp"
+        text: "PLAYER O: 0          PLAYER X: 0"  
+        halign: "center"
+        pos_hint: {"center_y": .2}  
+
     MDButton:
         id: reset
         style: "elevated"
@@ -99,5 +106,19 @@ MDFloatLayout:
             style: "standard"
             theme_icon_color: "Custom"
             icon_color: "red"
-        
-        
+    MDButton:
+        id: reset_scoreboard
+        style: "elevated"
+        pos_hint: {"center_x": 0.88, "center_y": 0.5}  
+        on_release: app.reset_scoreboard()
+        MDButtonText:
+            text: "Reset Scoreboard"
+            theme_text_color: "Custom"
+            text_color: "red"
+        MDButtonIcon:
+            icon: "refresh"
+            style: "standard"
+            theme_icon_color: "Custom"
+            icon_color: "red"
+
+    
